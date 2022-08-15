@@ -1,0 +1,13 @@
+  # edge detection by using cv2.canny function
+
+import cv2
+video=cv2.VideoCapture(0)                    
+
+while True:
+    ret,img=video.read()
+    edge_image=cv2.Canny(img,200,200)
+    cv2.imshow('image',edge_image)
+    key=cv2.waitKey(30)
+    if key==27:
+        break
+video.release()
